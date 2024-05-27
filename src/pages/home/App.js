@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleTheme } from '../../actions/themeActions'
+import { toggleModalState, toggleTheme } from '../../actions';
 
-const App = ({ theme, toggleTheme }) => {
+const App = (props) => {
   return (
-    <div style={{ backgroundColor: theme === 'light' ? 'white' : 'black', color: theme === 'light' ? 'black' : 'white', flex: 1 }}>
-    <h1>Tema atual: {theme}</h1>
-    <button onClick={toggleTheme}>Alterar Tema</button>
-  </div>
+    <div>
+      <h1>Tema atual: {props.theme}</h1>
+      <button onClick={props.toggleTheme}>Alterar Tema</button>
+      <h2>Modal: {props.isModalOpen ? 'Aberto' : 'Fechado'}</h2>
+      <button onClick={props.toggleModalState}>Toggle Modal</button>
+    </div>
   );
 };
 
 const mapStateToProps = state => ({
-  theme: state.theme.theme
+  theme: state.theme.theme,
+  isModalOpen: state.modal.isModalOpen
 });
 
-export default connect(mapStateToProps, { toggleTheme })(App);
+export default connect(mapStateToProps, { toggleTheme, toggleModalState })(App);
