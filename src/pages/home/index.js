@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { toggleModalState, toggleTheme } from '../../actions';
 import styles from './home.module.css'
-import { AiOutlineGithub  } from 'react-icons/ai';
+import Header from '../../components/header'
 
 const App = (props) => {
   return (
     <body className={`${styles.light_container} ${props.theme === 'dark' ? styles.dark_container : ''}`}>
+      <Header />
       <div className={styles.top_container}>
-        <button onClick={props.toggleTheme}>Alterar Tema</button>
-        <h1>GITHUB REPOS</h1>
-        <AiOutlineGithub className={styles.icon} color={props.theme === 'dark' ? 'white' : 'black'} />
+        <h1>GitExplorer</h1>
       </div>
     </body>
   );

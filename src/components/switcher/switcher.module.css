@@ -1,0 +1,54 @@
+.switcher {
+    width: 75px;
+    height: 36px;
+    background-color: #ccc;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    margin-right: 15vh;
+  }
+  
+  .switcher.light {
+    background-color: #d8ba41e3;
+  }
+  
+  .switcher.dark {
+    background-color: #333;
+  }
+  
+  .switcher .ball {
+    width: 40px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    position: absolute;
+  }
+  
+  .switcher.light .ball {
+    transform: translateX(0);
+    background-color: #000;
+    right: 4vh;
+  }
+  
+  .switcher.dark .ball {
+    transform: translateX(25px);
+    background-color: #fff;
+    left: 1vh;
+  }
+  
+  .icon {
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  .switcher.dark .icon {
+    color: #000;
+  }

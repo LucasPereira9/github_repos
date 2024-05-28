@@ -1,6 +1,6 @@
 .light_container {
     height: 100vh;
-    background-color: #f6f8fa;
+    background-color: #dededf;
     transition: background-color 1s ease;
 }
 .dark_container {
