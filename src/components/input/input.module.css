@@ -20,7 +20,7 @@
 }
 
 .focused {
-    border-color: #0366d6;
+    border-color: #76993D;
     outline: none;
   }
   .icon {
@@ -30,7 +30,7 @@
   }
   .icon_container {
     align-items: center;
-    background-color: #0366d6;
+    background-color: #76993D;
     border-radius: 3vh;
     cursor: pointer;
     display: flex;

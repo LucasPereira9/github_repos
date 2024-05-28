@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './input.module.css'
 import { AiOutlineSearch  } from 'react-icons/ai';
+import { connect } from 'react-redux';
 
 export const Input = (props) => {
     const { value, placeholder, onChange, submit } = props;
@@ -25,12 +26,15 @@ export const Input = (props) => {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
             />
-            <div onClick={submit} className={styles.icon_container}>
+            <div style={{backgroundColor: props.theme === 'dark' ? 'rgb(133, 179, 61)' : ''}} onClick={submit} className={styles.icon_container}>
                <AiOutlineSearch className={styles.icon} /> 
             </div>
             
         </div>
     );
 };
-
-export default Input;
+const mapStateToProps = state => ({
+    theme: state.theme.theme,
+  });
+  
+  export default connect(mapStateToProps)(Input);
