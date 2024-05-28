@@ -39,4 +39,9 @@
     margin: 2px;
     height: 5vh;
     width: 5vh;
+    transition: transform 0.3s ease, background-color 0.5s ease;
+  }
+  .icon_container:hover {
+    background-color: #89ad50;
+    transform: scale(1.05);
   }
