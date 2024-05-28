@@ -4,7 +4,7 @@
     transition: background-color 1s ease;
 }
 .dark_container {
-    background-color: #161b22;
+    background-color: #161b22e1;
 }
 .top_container {
     align-items: center;
@@ -15,4 +15,15 @@
 .icon {
     height: 10vh;
     width: 10vh;
+}
+.title {
+    font-size: 70px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    margin-bottom: 5vh;
+    transition: color 1s ease;
+}
+
+.title_dark {
+    color: white
 }
