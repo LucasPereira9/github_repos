@@ -1,0 +1,14 @@
+.container {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    padding-top: 2vh;
+    justify-content: space-between;
+}
+
+
+.icon {
+    margin-left: 15vh;
+    height: 10vh;
+    width: 10vh;
+}
