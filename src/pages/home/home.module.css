@@ -1,0 +1,18 @@
+.light_container {
+    height: 100vh;
+    background-color: #f6f8fa;
+    transition: background-color 1s ease;
+}
+.dark_container {
+    background-color: #161b22;
+}
+.top_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.icon {
+    height: 10vh;
+    width: 10vh;
+}
