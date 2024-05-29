@@ -12,7 +12,7 @@ const App = (props) => {
   const [searchItem, setSearchItem] = React.useState("");
   const [repositories, setRepositories] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
+  const [error, setError] = React.useState(false);
   const isDarkTheme = props.theme === 'dark'
 
       const handleChange = (event) => {
@@ -27,12 +27,12 @@ const App = (props) => {
         const response = await fetchGitHubRepositories(searchItem);
         setRepositories(response)
         setIsLoading(false)
-        console.log('resss', response)
-        
+
         if (repositories.length === 0) {
           setError(true)
         }
       } catch (error) {
+        console.log('cafasdasd')
         setError(true)
         setIsLoading(false)
       }
@@ -69,13 +69,10 @@ const App = (props) => {
         {isLoading ?
         <ClipLoader color={isDarkTheme ? '#fff' : '#000'} loading={isLoading} size={50} />
           :
-            error ? <h1>error</h1> 
-          : 
           <div className={styles.repositories_content}>
               {RepositoriesOptions}
           </div>
-      }
-          
+      } 
       </div>
       
     </div>
