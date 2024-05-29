@@ -12,7 +12,7 @@
     padding: 1vh;
     overflow: hidden;
     height: 25vh;
-    max-width: 50vh;
+    width: 65vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
     transition: box-shadow 1s ease, background-color 1s ease, transform 0.3s ease;;
 }

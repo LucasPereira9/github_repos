@@ -1,5 +1,6 @@
 .light_container {
     background-color: #dededf;
+    min-height: 100vh;
     transition: background-color 1s ease;
 }
 .dark_container {
@@ -26,16 +27,24 @@
 .title_dark {
     color: white
 }
+.content {
+    margin-top: 8vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 
 .repositories_content {
     align-items: center;
-    margin-top: 10vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; adicionar no caso mobile*/ 
   }
   
   .repositories_content > div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
     width: 48%;
     margin: 15px;
   }

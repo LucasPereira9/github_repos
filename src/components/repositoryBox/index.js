@@ -2,14 +2,14 @@ import styles from './repositoryBox.module.css'
 import { connect } from 'react-redux';
 
 export const RepositoryBox = (props) => {
-    const { title, user, description, submit } = props;
+    const { title, user, description, image, submit } = props;
     const darkTheme = props.theme === 'dark'
 
 
     return (
         <div className={`${styles.container} ${darkTheme ? styles.dark_container : ''}`} onClick={submit}>
             <img
-                src="https://avatars.githubusercontent.com/u/69631?v=4"
+                src={image}
                 alt="Descrição da Imagem"
                 style={{ width: '80px', height: '80px', borderRadius: '10px' }}
              />
