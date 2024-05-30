@@ -45,7 +45,7 @@ export const fetchGitHubRepositories = async (searchQuery) => {
       { query },
       {
         headers: {
-          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          // Authorization: `Bearer ${GITHUB_TOKEN}`,
           'Content-Type': 'application/json'
         }
       }
