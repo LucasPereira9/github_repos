@@ -53,6 +53,6 @@ export const fetchGitHubRepositories = async (searchQuery) => {
     
     return response.data.data.search.edges.map(edge => edge.node);
   } catch (error) {
-    throw new Error(`Error fetching data: ${error.message}`);
+          return error.response.data.message
   }
 };

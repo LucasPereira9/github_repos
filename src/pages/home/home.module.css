@@ -87,10 +87,26 @@
   font-weight: 400;
   font-family: 'Times New Roman', Times, serif;
 }
+.error_mascot {
+  height: 46vh;
+  width: 50vh;
+}
+.description_mascot {
+  margin-left: 6vh;
+  height: 29vh;
+  width: 32vh;
+}
 
 @media only screen and (max-width: 1110px) {
   .repositories_content {
     justify-content: center;
+  }
+  .error_mascot {
+    height: 35vh;
+    width: 38vh;
+  }
+  .description_mascot {
+    margin-left: 0vh;
   }
   .content {
     margin-bottom: 6vh;
