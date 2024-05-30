@@ -19,6 +19,11 @@ section {
   justify-content: space-between;
   border-bottom: 0.2px solid rgba(173, 173, 173, 0.685);
 }
+footer {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 
 .dark_mode {
   background-color: #161b22e1;

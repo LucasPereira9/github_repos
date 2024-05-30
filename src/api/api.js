@@ -7,7 +7,7 @@ export const fetchGitHubRepositories = async (searchQuery) => {
 
   const query = `
     query {
-      search(query: "${searchQuery} in:name", type: REPOSITORY, first: 20) {
+      search(query: "${searchQuery} in:name", type: REPOSITORY, first: 26) {
         edges {
           node {
             ... on Repository {

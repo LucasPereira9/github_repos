@@ -8,6 +8,7 @@ import {fetchGitHubRepositories} from '../../api/api.js'
 import RepositoryBox from '../../components/repositoryBox'
 import ClipLoader from 'react-spinners/ClipLoader';
 import Modal from '../../components/modal/index.js'
+import { PrimaryButton } from '../../components/primaryButton/index.js'
 
 const App = (props) => {
   const [searchItem, setSearchItem] = React.useState("");
@@ -90,7 +91,7 @@ const App = (props) => {
                 alt={selectedItem?.owner?.login}
                 className={styles.modal_image}
               />
-              <h1>{selectedItem?.name}</h1>
+              <h1 style={{textAlign: 'center'}}>{selectedItem?.name}</h1>
             </div>
             <div className={styles.modal_description}>
               <h1 className={styles.description}>{selectedItem?.description}</h1>
@@ -111,7 +112,7 @@ const App = (props) => {
             </section>
           </article>
           <footer>
-            <button onClick={() => props.toggleModalState()}>Close</button>
+            <PrimaryButton submit={() => props.toggleModalState()} title={'Fechar'} />
           </footer>
         </div>
     </Modal>
