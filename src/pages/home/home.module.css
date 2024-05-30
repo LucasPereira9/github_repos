@@ -48,3 +48,33 @@
     width: 48%;
     margin: 15px;
   }
+  .modal_container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .modal_image_container {
+    align-items: center;
+    color: #76993D;
+    display: flex;
+    flex-direction: column;
+    padding-right: 8vh;
+  }
+  .modal_image {
+    border-radius: 10px;
+    height: 20vh;
+    width: 20vh;
+  }
+  .modal_description {
+    color: white;
+    width: 50vh;
+  }
+  .description {
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .modal_item_title {
+    font-size: 26px;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+  }

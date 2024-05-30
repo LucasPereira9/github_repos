@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { toggleModalState, toggleTheme } from '../../actions';
+import { toggleTheme } from '../../actions';
 import { AiOutlineGithub  } from 'react-icons/ai';
 import styles from './header.module.css'
 import ThemeSwitcher from '../switcher'
@@ -17,7 +17,6 @@ const Header = (props) => {
 
 const mapStateToProps = state => ({
     theme: state.theme.theme,
-    isModalOpen: state.modal.isModalOpen
   });
   
-  export default connect(mapStateToProps, { toggleTheme, toggleModalState })(Header);
+  export default connect(mapStateToProps, { toggleTheme })(Header);

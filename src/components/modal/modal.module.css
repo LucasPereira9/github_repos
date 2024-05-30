@@ -1,0 +1,31 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    background: #414040;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 70vh;
+    width: 90vh;
+  }
+
+  
+@media only screen and (max-width: 1110px) {
+  .modal {
+    max-width: 90%;
+    padding: 1px;
+  }
+}
