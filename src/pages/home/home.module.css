@@ -38,7 +38,6 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; adicionar no caso mobile*/ 
   }
   
   .repositories_content > div {
@@ -77,4 +76,20 @@
     font-size: 26px;
     font-weight: 400;
     font-family: 'Times New Roman', Times, serif;
+  }
+
+  
+@media only screen and (max-width: 1110px) {
+  .repositories_content {
+    justify-content: center;
+  }
+  .content {
+    margin-bottom: 6vh;
+  }
+}
+
+  @media only screen and (max-width: 350px) {
+    .title {
+      font-size: 60px;
+    }
   }

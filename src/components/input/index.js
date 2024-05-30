@@ -28,8 +28,7 @@ export const Input = (props) => {
             />
             <div style={{backgroundColor: props.theme === 'dark' ? 'rgb(133, 179, 61)' : ''}} onClick={submit} className={styles.icon_container}>
                <AiOutlineSearch className={styles.icon} /> 
-            </div>
-            
+            </div>    
         </div>
     );
 };
