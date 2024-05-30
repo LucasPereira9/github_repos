@@ -10,13 +10,26 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import Modal from '../../components/modal/index.js'
 import { PrimaryButton } from '../../components/primaryButton/index.js'
 
+
 const App = (props) => {
+
+  const ERROR_TYPES = {
+    NONE: 'none',
+    BAD_CREDENTIALS: 'badCredentials',
+    NO_DESCRIPTION: 'noDescription',
+    NOT_FOUND: 'notFound'
+  };
+  
   const [searchItem, setSearchItem] = React.useState("");
   const [repositories, setRepositories] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState();
-  const [error, setError] = React.useState(false);
+  const [error, setError] = React.useState(ERROR_TYPES.NONE);
   const isDarkTheme = props.theme === 'dark'
+
+  const not_found_error_image = `/images/${props.theme === 'dark' ? 'github_white.png' : 'github_black.png'}`;
+  const bad_credencials_image = `/images/${props.theme === 'dark' ? 'github_credencials_white.png' : 'github_credencials_black.png'}`;
+  const no_description_image = '/images/github_no_description.png';
 
       const handleChange = (event) => {
         setSearchItem(event.target.value);
@@ -28,15 +41,24 @@ const App = (props) => {
       setSearchItem('')
       try {
         const response = await fetchGitHubRepositories(searchItem);
+        console.log('res', response?.length === 0)
+        if (response === 'Bad credentials') {
+          setIsLoading(false)
+          setError(ERROR_TYPES.BAD_CREDENTIALS);
+          return
+        }
+        if (response?.length === 0) {
+          setIsLoading(false)
+          setRepositories([])
+          setError(ERROR_TYPES.NOT_FOUND);
+          return
+        }
+        setError(ERROR_TYPES.NONE);
         setRepositories(response)
         setIsLoading(false)
-
-        if (repositories.length === 0) {
-          setError(true)
-        }
+        return
       } catch (error) {
-        console.log('cafasdasd')
-        setError(true)
+        setError(ERROR_TYPES.NOT_FOUND);
         setIsLoading(false)
       }
     };
@@ -59,7 +81,7 @@ const App = (props) => {
     } else {
       document.documentElement.classList.remove('dark_mode');
     }
-  }, [isDarkTheme, props.theme, repositories]);
+  }, [isDarkTheme, props.theme, repositories, error]);
 
   return (
     <div className={`${styles.light_container} ${isDarkTheme ? styles.dark_container : ''}`}>
@@ -78,6 +100,18 @@ const App = (props) => {
         <ClipLoader color={isDarkTheme ? '#fff' : '#000'} loading={isLoading} size={50} />
           :
           <div className={styles.repositories_content}>
+            {error === ERROR_TYPES.NOT_FOUND && 
+            <img
+                src={process.env.PUBLIC_URL + not_found_error_image}
+                alt={not_found_error_image}
+                className={styles.error_mascot}
+              />}
+              {error === ERROR_TYPES.BAD_CREDENTIALS && 
+            <img
+                src={process.env.PUBLIC_URL + bad_credencials_image}
+                alt={bad_credencials_image}
+                className={styles.error_mascot}
+              />}
               {RepositoriesOptions}
           </div>
       } 
@@ -94,6 +128,12 @@ const App = (props) => {
                 <h1 className={styles.modal_repo_name}>{selectedItem?.name}</h1>
               </div>
               <div className={styles.modal_description}>
+                {selectedItem?.description === null &&
+                <img
+                    src={process.env.PUBLIC_URL + no_description_image}
+                    alt={no_description_image}
+                    className={styles.description_mascot}
+                  />}
                 <h1 className={styles.description}>{selectedItem?.description}</h1>
               </div>
             </header>
