@@ -82,17 +82,16 @@ const App = (props) => {
           </div>
       } 
       </div>
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'green'}}>
         <Modal setIsModalOpen={() => props.toggleModalState()} isModalOpen={props.isModalOpen}>
           <div className={styles.modal_container}>
-            <header style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <header className={styles.modal_header}>
               <div className={styles.modal_image_container}>
                 <img
                   src={selectedItem?.owner?.avatarUrl}
                   alt={selectedItem?.owner?.login}
                   className={styles.modal_image}
                 />
-                <h1 style={{textAlign: 'center'}}>{selectedItem?.name}</h1>
+                <h1 className={styles.modal_repo_name}>{selectedItem?.name}</h1>
               </div>
               <div className={styles.modal_description}>
                 <h1 className={styles.description}>{selectedItem?.description}</h1>
@@ -117,7 +116,6 @@ const App = (props) => {
             </footer>
           </div>
       </Modal>
-    </div>
     </div>
   );
 };

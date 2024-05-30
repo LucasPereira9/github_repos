@@ -11,7 +11,7 @@
     justify-content: space-around;
     padding: 1vh;
     overflow: hidden;
-    height: 25vh;
+    height: 30vh;
     width: 65vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
     transition: box-shadow 1s ease, background-color 1s ease, transform 0.3s ease;;
@@ -59,4 +59,22 @@
     text-overflow: ellipsis;
     width: 100%;
     box-sizing: border-box; 
+}
+
+@media only screen and (max-width: 1110px) {
+    .container {
+        width: 50vh;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 38vh;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .container {
+        height: 38vh;
+        width: 34vh;
+    }
 }
