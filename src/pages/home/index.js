@@ -41,7 +41,6 @@ const App = (props) => {
       setSearchItem('')
       try {
         const response = await fetchGitHubRepositories(searchItem);
-        console.log('res', response?.length === 0)
         if (response === 'Bad credentials') {
           setIsLoading(false)
           setError(ERROR_TYPES.BAD_CREDENTIALS);
