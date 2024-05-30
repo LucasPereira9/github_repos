@@ -82,40 +82,40 @@ const App = (props) => {
           </div>
       } 
       </div>
-      <Modal setIsModalOpen={() => props.toggleModalState()} isModalOpen={props.isModalOpen}>
-        <div className={styles.modal_container}>
-          <header style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div className={styles.modal_image_container}>
-              <img
-                src={selectedItem?.owner?.avatarUrl}
-                alt={selectedItem?.owner?.login}
-                className={styles.modal_image}
-              />
-              <h1 style={{textAlign: 'center'}}>{selectedItem?.name}</h1>
-            </div>
-            <div className={styles.modal_description}>
-              <h1 className={styles.description}>{selectedItem?.description}</h1>
-            </div>
-          </header>
-          <article>
-            <section>
-              <h1 className={styles.modal_item_title}>Commits</h1>
-              <h2>{selectedItem?.defaultBranchRef?.target.history.totalCount}</h2>
-            </section>
-            <section>
-              <h1 className={styles.modal_item_title}>Open Issues</h1>
-              <h2>{selectedItem?.issues.totalCount}</h2>
-            </section>
-            <section>
-              <h1 className={styles.modal_item_title}>Open Pull Requests</h1>
-              <h2>{selectedItem?.pullRequests.totalCount}</h2>
-            </section>
-          </article>
-          <footer>
-            <PrimaryButton submit={() => props.toggleModalState()} title={'Fechar'} />
-          </footer>
-        </div>
-    </Modal>
+        <Modal setIsModalOpen={() => props.toggleModalState()} isModalOpen={props.isModalOpen}>
+          <div className={styles.modal_container}>
+            <header className={styles.modal_header}>
+              <div className={styles.modal_image_container}>
+                <img
+                  src={selectedItem?.owner?.avatarUrl}
+                  alt={selectedItem?.owner?.login}
+                  className={styles.modal_image}
+                />
+                <h1 className={styles.modal_repo_name}>{selectedItem?.name}</h1>
+              </div>
+              <div className={styles.modal_description}>
+                <h1 className={styles.description}>{selectedItem?.description}</h1>
+              </div>
+            </header>
+            <article>
+              <section>
+                <h1 className={styles.modal_item_title}>Commits</h1>
+                <h2>{selectedItem?.defaultBranchRef?.target.history.totalCount}</h2>
+              </section>
+              <section>
+                <h1 className={styles.modal_item_title}>Open Issues</h1>
+                <h2>{selectedItem?.issues.totalCount}</h2>
+              </section>
+              <section>
+                <h1 className={styles.modal_item_title}>Open Pull Requests</h1>
+                <h2>{selectedItem?.pullRequests.totalCount}</h2>
+              </section>
+            </article>
+            <footer>
+              <PrimaryButton submit={() => props.toggleModalState()} title={'Fechar'} />
+            </footer>
+          </div>
+      </Modal>
     </div>
   );
 };

@@ -21,13 +21,13 @@
     min-height: 70vh;
     width: 90vh;
     max-height: 100vh;
-    overflow-y: visible;
+   overflow-y: auto;
   }
 
   
 @media only screen and (max-width: 1110px) {
   .modal {
     max-width: 90%;
-    padding: 1px;
+    margin-bottom: 2vh;
   }
 }

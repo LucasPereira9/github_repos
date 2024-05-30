@@ -1,47 +1,70 @@
 .container {
-    align-items: center;
-    display: flex;
-    background-color: white;
-    border-radius: 10vh;
-    border-style: solid;
-    border-color: rgba(116, 115, 113, 0.774);
-    border-width: 3px;
-    transition: border-color 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10vh;
+  border: 3px solid rgba(116, 115, 113, 0.774);
+  transition: border-color 0.4s;
+  box-sizing: border-box;
+  width: 66vh;
 }
+
 .input {
-    border-style: none;
-    border-radius: 10vh;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 2vh;
-    outline: none;
-    height: 4vh;
-    width: 60vh;
+  flex-grow: 1;
+  border: none;
+  border-radius: 10vh;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 2vh;
+  outline: none;
+  height: 4vh;
+  min-width: 0;
+  width: 66vh;
 }
 
 .focused {
-    border-color: #76993D;
-    outline: none;
+  border-color: #76993D;
+  outline: none;
+}
+
+.icon {
+  height: 3vh;
+  width: 3vh;
+  color: white;
+}
+
+.icon_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #76993D;
+  border-radius: 3vh;
+  cursor: pointer;
+  padding: 6px;
+  margin: 2px;
+  height: 5vh;
+  width: 8vh;
+  transition: transform 0.3s ease, background-color 0.5s ease;
+}
+
+.icon_container:hover {
+  background-color: #89ad50;
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 1110px) {
+  .container {
+      max-width: 44vh;
   }
-  .icon {
-    height: 3vh;
-    width: 3vh;
-    color: white;
+}
+
+@media only screen and (max-width: 350px) {
+  .container {
+      max-width: 34vh;
   }
-  .icon_container {
-    align-items: center;
-    background-color: #76993D;
-    border-radius: 3vh;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    padding: 6px;
-    margin: 2px;
-    height: 5vh;
-    width: 5vh;
-    transition: transform 0.3s ease, background-color 0.5s ease;
+  .input {
+      flex-grow: 1;
+      max-width: 26vh;
   }
-  .icon_container:hover {
-    background-color: #89ad50;
-    transform: scale(1.05);
-  }
+}

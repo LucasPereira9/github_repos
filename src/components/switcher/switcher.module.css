@@ -52,3 +52,11 @@
   .switcher.dark .icon {
     color: #000;
   }
+
+  
+
+@media only screen and (max-width: 1110px) {
+  .switcher {
+    margin-right: 0vh;
+  }
+}
