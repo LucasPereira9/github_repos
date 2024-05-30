@@ -58,7 +58,6 @@ const App = (props) => {
         setIsLoading(false)
         return
       } catch (error) {
-        console.log('not founddnd')
         setError(ERROR_TYPES.NOT_FOUND);
         setIsLoading(false)
       }
